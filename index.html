@@ -8,6 +8,16 @@
         function test() {
             window.open("https://www.google.com", "_blank");
         }
+        var audio = new Audio('audios/nyan_cat.wav');
+        function nyan() {
+            audio.play();
+            document.getElementById("nyan").src="images/002.gif";
+        }
+        function pauseNyan() {
+            audio.pause();
+            document.getElementById("nyan").src="images/003.jpg";
+            // audio.currentTime = 0;
+        }
     </script>
 </head>
 <body>
@@ -19,9 +29,18 @@
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, nesciunt repudiandae perferendis iste aliquam quis, mollitia voluptas explicabo officiis vitae et eius quos ea! Voluptas tempora sit nam sunt cumque.
     </p>
 
-    <img style="border-radius: 35px;" src="images/001.jpg" alt="This is owl picture." width="50%">
-    <img style="border-radius: 35px;" src="images/002.gif" alt="Nyan Cat~~~~" width="50%">
+    <div class="box">
+        <a href="https://www.pinterest.com/" target="_blank">
+            <img style="border-radius: 35px;" src="images/001.jpg" alt="This is owl picture." height="100px" width="auto">
+        </a>
+        <img id="nyan" onmouseover="nyan()" onmouseleave="pauseNyan()" style="border-radius: 35px;" src="images/003.jpg" alt="Nyan Cat~~~~" height="100px" width="auto">
+    </div>
     <br>
-    <button onclick="test()">Click me!</button>
+    <a href="page1.html" target="_self">go to page 1</a>
+    <br>
+    <a href="https://www.sit.kmutt.ac.th" target="_blank">SIT KMUTT</a>
+    <br>
+    <br>
+    <button class="btn" onclick="test()">Click me!</button>
 </body>
 </html>
